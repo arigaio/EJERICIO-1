@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+void main()
+{
+	FILE *buff;
+	char ch;
+
+	/*Abrir el archivo para lectura*/
+	buff=fopen("origen.txt", "r");
+	if(buff==NULL)
+		printf("Erorr al abrir archivo \n");
+	else 
+	{
+		/*leer un caracter a la vez hasta alcanzar EOF*/
+		ch=getc(buff);
+		while(ch != EOF)
+		{
+			putchar(ch);
+			ch=getc(buff);
+		}
+		/*cerrar el archivo*/
+		fclose(buff);
+	}
+
+}
